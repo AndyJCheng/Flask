@@ -9,8 +9,8 @@ http://docs.jinkan.org/docs/jinja2/
 1 download python form python website
 2 configure env val(include scripts path)
 ## install virtual env
-1 solved many flask version in the same web frame.
-2 pip install virtualenv
-  virtualenv flask-env
-  \Flask\flask-env\Scripts>activate(deactivate)
-  (flask-env) E****:\Flask>pip install flask
+1 solved many flask version in the same web frame
+2 pip install virtualenv  cd
+  virtualenv flask-env  
+  \Flask\flask-env\Scripts>activate(deactivate)  
+  (flask-env) E****:\Flask>pip install    
