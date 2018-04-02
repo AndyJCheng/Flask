@@ -8,5 +8,25 @@
 {% for k, v in user.items() %}
   <p>{{ k }}: {{ v }}<p/>
 {% endfor %}
+<table border="2">
+    <thead>
+    <th>name</th>
+    <th>author</th>
+    <th>price</th>
+
+    </thead>
+    <tbody>
+    {% for book in books %}
+        <tr>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.price }}</td>
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+</table>
+
 </body>
 </html>

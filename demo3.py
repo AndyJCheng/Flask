@@ -16,7 +16,19 @@ def home():
         'name': 'andy',
         'age': 25
     }
-    return render_template('index1.html', user=user)
+    books = [
+        {
+            'name': 'a',
+            'author': 'adf',
+            'price': 'aasfasdf'
+        },
+        {
+            'name': 'a',
+            'author': 'adf',
+            'price': 'aasfasdf'
+        }
+    ]
+    return render_template('index1.html', user=user, books=books)
 
 
 if __name__ == '__main__':
