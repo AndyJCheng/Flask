@@ -4,7 +4,7 @@
 # @Author : Andy C
 # @File   : demo2.py
 
-from flask import Flask, url_for, redirect
+from flask import Flask, url_for, redirect, render_template
 import config
 
 app = Flask(__name__)
@@ -19,7 +19,19 @@ def home():
 
 @app.route('/login/')
 def login():
-    return 'this is login page'
+    class Person:
+        name = 'dfasfs'
+        age = 22
+    p = Person()
+    content = {
+        'user': 'andy',
+        'age': 25,
+        'person': p,
+        'websites': {
+            'baidu': 'baidu.com'
+        }
+    }
+    return render_template('index.html', **content)
 
 
 @app.route('/question/<id>')
@@ -32,3 +44,5 @@ def question(id):
 
 if __name__ == '__main__':
     app.run()
+
+
