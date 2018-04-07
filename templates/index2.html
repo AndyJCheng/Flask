@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="{{ picture | default('https://img-ads.csdn.net/2018/201801161732064216.jpg') }}">
+<hr/>
+<p>评论数({{ contents | length}})</p>
+<hr/>
+{% for content in contents %}
+    <p>{{ content.name }}</p>
+    <p>{{ content.author }}</p>
+    <p>{{ content.price }}</p>
+
+{% endfor %}
+</body>
+</html>
