@@ -8,7 +8,6 @@
 """
 from flask import Flask
 from exts import db
-from models import UserTest
 import config
 
 app = Flask(__name__)

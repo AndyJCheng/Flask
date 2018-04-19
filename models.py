@@ -9,9 +9,11 @@
 from exts import db
 
 
-class UserTest(db.Model):
-    __tablename__ = 'UserTest'
+class User(db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(100), nullable=True)
+    name = db.Column(db.String(100), nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+
 
 
