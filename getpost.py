@@ -7,9 +7,13 @@
 @time: 2018/4/26 23:17
 g: g object record user all data, only work in one request
 """
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template
+from flask import request, g, redirect, session, url_for
 from utils import login_log
+import os
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.urandom(24)
 
 
 @app.route('/')
@@ -25,8 +29,9 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         if username == 'andy' and password == '55':
-            g.username = username
-            login_log()
+            # g.username = username
+            # login_log()
+            session['username'] = username
             return 'login successfully'
         else:
             return 'incorrect username or password'
@@ -35,6 +40,20 @@ def login():
 @app.route('/search/')
 def search():
     return request.args.get('q')
+
+
+@app.route('/edit/')
+def edit():
+    if hasattr(g, 'username'):
+        return 'edit successfully'
+    else:
+        return redirect(url_for('login'))
+
+
+@app.before_request
+def before():
+    if session.get('username'):
+        g.username = session.get('username')
 
 
 if __name__ == '__main__':
