@@ -18,7 +18,8 @@ app.config['SECRET_KEY'] = os.urandom(24)
 
 @app.route('/')
 def index():
-    return render_template('getpost.html')
+    # return render_template('getpost.html')
+    return render_template('context1.html')
 
 
 @app.route('/login/', methods=['GET', 'POST'])
@@ -44,16 +45,25 @@ def search():
 
 @app.route('/edit/')
 def edit():
-    if hasattr(g, 'username'):
-        return 'edit successfully'
-    else:
-        return redirect(url_for('login'))
+    # if hasattr(g, 'username'):
+    #     return 'edit successfully'
+    # else:
+    #     return redirect(url_for('login'))
+    return render_template('edit.html')
 
 
 @app.before_request
 def before():
     if session.get('username'):
         g.username = session.get('username')
+
+
+@app.context_processor
+def my_context():
+    # username = session.get('username')
+    # if username:
+    #     return {'username': username}
+    return {'username': 'andy'}
 
 
 if __name__ == '__main__':
