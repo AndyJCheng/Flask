@@ -11,8 +11,11 @@ http://docs.jinkan.org/docs/jinja2/
 ## install virtual env
 1 solved many flask version in the same web frame.
 2 pip install virtualenv  
-  virtualenv flask-env  
+  A. virtualenv flask-env  
   \Flask\flask-env\Scripts>activate(deactivate)  
   (flask-env) E****:\Flask>pip install flask  
+  B. venv  
+  python -m venv flask(python3.3 later)  
+  
 
                                 
