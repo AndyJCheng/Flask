@@ -16,6 +16,13 @@ http://docs.jinkan.org/docs/jinja2/
   (flask-env) E****:\Flask>pip install flask  
   B. venv  
   python -m venv flask(python3.3 later)  
+ 
+## pipvenv(manage all virtual env, recommended highly)
+1 pip install pipenv  
+2 set virtual env path in the root directory of the project:  
+  set PIPENV_VENV_IN_PROJECT=xxxxxxx  
+3 pipenv install   
+       
   
 
                                 
