@@ -22,4 +22,4 @@ def greet(name):
 # if __name__ == '__main__':
 #     app.run()
 # app.run()---> flask run
-# how to startup app: 1 set FLASK_APP=sample.py, 2 flask run
+# how to startup app: 1 set FLASK_APP=sample.py, 2 flask run(python -m flask run)
