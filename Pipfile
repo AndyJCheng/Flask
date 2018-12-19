@@ -5,8 +5,10 @@ name = "pypi"
 
 [packages]
 flask = "*"
+python-dotenv = "*"
 
 [dev-packages]
+watchdog = "*"
 
 [requires]
 python_version = "3.6"

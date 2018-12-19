@@ -7,7 +7,7 @@
 @time: 2018/12/18 0:01
 """
 from flask import Flask
-
+import click
 app = Flask(__name__)
 
 # bind multiple url to view method
@@ -23,3 +23,10 @@ def greet(name):
 #     app.run()
 # app.run()---> flask run
 # how to startup app: 1 set FLASK_APP=sample.py, 2 flask run(python -m flask run)
+
+# custom flask cli command
+
+
+@app.cli.command()
+def hello():
+    click.echo('hello flask')
